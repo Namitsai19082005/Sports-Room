@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+    background-color:bisque;
+}
+.heading{
+    text-align:center;
+    background-color:rgba(140, 255, 0, 0.845);
+}
+.sports-section{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sports-content{
+    height: 400%;
+    width: 30%;
+    padding: 20px 0px 15px;
+    margin-top: 15px;
+}

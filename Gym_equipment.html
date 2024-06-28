@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Equipment</title>
+    <link  href="sports.css" rel="stylesheet" >
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        .announcement {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gym Equipment</h1>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="prn">PRN Number:</label>
+            <input type="text" id="prn" name="prn" required>
+
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+
+        <h2>Booked Slots</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>PRN Number</th>
+                    <th>Branch</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="bookedSlots">
+                <!-- Booked slots will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <div class="announcement">
+            <h2>Announcements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Announcement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-12-31</td>
+                        <td>Welcome to our sports facility! Enjoy your time.</td>
+                    </tr>
+                    <!-- Add more announcements as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const prn = document.getElementById('prn').value;
+            const branch = document.getElementById('branch').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            // Add booked slot to the table
+            const bookedSlotsTable = document.getElementById('bookedSlots');
+            const newRow = bookedSlotsTable.insertRow();
+            const cellName = newRow.insertCell(0);
+            const cellPRN = newRow.insertCell(1);
+            const cellBranch = newRow.insertCell(2);
+            const cellDate = newRow.insertCell(3);
+            const cellTime = newRow.insertCell(4);
+
+            cellName.textContent = name;
+            cellPRN.textContent = prn;
+            cellBranch.textContent = branch;
+            cellDate.textContent = date;
+            cellTime.textContent = time;
+            cellEntry.innerHTML = '<button onclick="markEntry(this)">Entry</button>';
+            cellExit.innerHTML = '<button onclick="markExit(this)">Exit</button>';
+            
+            // Reset the form
+            document.getElementById('bookingForm').reset();
+
+            alert('Booking submitted!'); // Replace this with your actual logic
+        });
+    </script>
+</body>
+</html>

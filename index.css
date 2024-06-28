@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    border: border-box;
+    font-family: Arial;
+}
+.heading{
+    text-align: center;
+}
+#heading{
+    background-color: lightsalmon;
+}
+#login{
+    border-radius: 1cm;
+}
